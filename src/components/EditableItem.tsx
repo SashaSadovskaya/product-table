@@ -41,7 +41,7 @@ export const EditableItem = ({good, updateGood, setToEdit}: ItemProps) => {
         </td>
         <td className='table-col'>
           <input
-            min='0.1'
+            min='0'
             type='number'
             name='price'
             value={inputValues.price}

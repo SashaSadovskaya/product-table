@@ -3,15 +3,14 @@ import './App.scss';
 
 import Form from "./components/Form/Form";
 import {IGood} from "./data";
+import {goods as initialGoods} from './data'
 import { Table } from './components/Table/Table';
 import {AddCallback, RemoveCallback, UpdateCallback} from "./types";
-
-
 
 function App() {
   const now = new Date();
 
-  const [goods, setGoods] = useState<Array<IGood>>([])
+  const [goods, setGoods] = useState<Array<IGood>>(initialGoods)
 
   const removeGood: RemoveCallback = (id: number) => {
     setGoods([...goods.filter((good) => good.id !== id)])

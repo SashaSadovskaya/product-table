@@ -17,9 +17,9 @@ export const Table = ({goods, removeGood, updateGood}: TableProps) => {
   let sum = 0;
 
   goods.forEach(good =>{
-    sum += good.price * good.quantity
-    return sum
-  } )
+    sum += Math.round(good.price * 100) * good.quantity
+  })
+  sum /= 100;
 
   return (
     <table className="table table-hover table-bordered">

@@ -6,13 +6,13 @@ export const goods: Array<IGood> = [
     price: 2.2
   },
   {
-    id: new Date().getTime(),
+    id: new Date().getTime() + 1,
     name: "pencil",
     quantity: 54,
     price: 1.5
   },
   {
-    id: new Date().getTime(),
+    id: new Date().getTime() + 2,
     name: "notebook",
     quantity: 4,
     price: 5.5
