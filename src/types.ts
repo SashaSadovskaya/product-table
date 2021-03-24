@@ -1,12 +1,17 @@
-import {IGood} from "./data";
-import React from "react";
 
 export type RemoveCallback = (id: number) => void;
 export type AddCallback = (inputName: string, inputQuantity: number, inputPrice: number) => void;
 export type UpdateCallback = (id: number, inputName: string, inputQuantity: number, inputPrice: number) => void;
 
+export interface IGood {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
+}
 
-export interface TableProps {
+
+export interface ITableProps {
   goods: IGood[]
   removeGood: RemoveCallback
   updateGood: UpdateCallback
@@ -17,7 +22,7 @@ export interface IItemProps {
   removeGood: RemoveCallback
   editGood: RemoveCallback
 }
-export interface ItemProps {
+export interface IEditableItemProps {
   good: IGood;
   removeGood: RemoveCallback
   editGood: RemoveCallback

@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import './App.scss';
 
 import Form from "./components/Form/Form";
-import {IGood} from "./data";
 import {goods as initialGoods} from './data'
 import { Table } from './components/Table/Table';
-import {AddCallback, RemoveCallback, UpdateCallback} from "./types";
+import {AddCallback, IGood, RemoveCallback, UpdateCallback} from "./types";
 
 function App() {
   const now = new Date();
@@ -29,6 +28,7 @@ function App() {
           break;
         }
       }
+
 
       // @ts-ignore
       if(good === undefined || key === undefined) return;

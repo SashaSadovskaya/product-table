@@ -1,5 +1,4 @@
 import React, { useState} from 'react';
-import {goods} from "../../data";
 import './Form.scss'
 import {AddCallback} from "../../types";
 

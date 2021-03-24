@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import {IGood} from "../../data";
 import './Table.scss'
 import {Item} from "../Item/Item";
 import {EditableItem} from "../EditableItem";
-import {TableProps} from "../../types";
+import {IGood, ITableProps} from "../../types";
 
 
-export const Table = ({goods, removeGood, updateGood}: TableProps) => {
+export const Table = ({goods, removeGood, updateGood}: ITableProps) => {
 
   const [toEdit, setToEdit] = useState(0)
 

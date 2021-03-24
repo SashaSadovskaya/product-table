@@ -1,3 +1,5 @@
+import {IGood} from "./types";
+
 export const goods: Array<IGood> = [
   {
     id: new Date().getTime(),
@@ -19,10 +21,4 @@ export const goods: Array<IGood> = [
   }
 ]
 
-export interface IGood {
-  id: number;
-  name: string;
-  quantity: number;
-  price: number;
-}
 

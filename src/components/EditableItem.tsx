@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import {IGood} from "../data";
-import {ItemProps} from "../types";
+import {IEditableItemProps, IGood} from "../types";
 
 
-export const EditableItem = ({good, updateGood, setToEdit}: ItemProps) => {
+export const EditableItem = ({good, updateGood, setToEdit}: IEditableItemProps) => {
 
   const [inputValues, setInputValues] = useState<IGood>(good)
 

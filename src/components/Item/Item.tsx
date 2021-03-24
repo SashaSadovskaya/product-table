@@ -1,10 +1,8 @@
 import React from "react";
 import editIcon from "../../assets/edit.png";
 import deleteIcon from "../../assets/delete1.png"
-import {IGood} from "../../data";
 import './Item.scss'
 import {IItemProps} from '../../types'
-
 
 
 export const Item = ({good, removeGood, editGood}: IItemProps) => {
