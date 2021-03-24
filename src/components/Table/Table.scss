@@ -1,0 +1,16 @@
+.table{
+  width: 70%;
+  .first-col{
+    vertical-align: middle;
+  }
+  .table-col{
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
