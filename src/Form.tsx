@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import {goods} from "./data";
 import {AddCallback} from "./App";
+import './Form.scss'
 
 interface FormProps {
   addGood: AddCallback
@@ -28,7 +29,7 @@ const Form = ({addGood}: FormProps) => {
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className='form-container' onSubmit={submitHandler}>
       <div className="form-group input-group mb-3">
         <input
           name = 'name'
@@ -58,7 +59,7 @@ const Form = ({addGood}: FormProps) => {
           value={inputValues.price}
           onKeyDown={handleKeyPress}
         />
-        <button type='submit'>Add</button>
+        <button className='btn btn-outline-success' type='submit'>Add</button>
       </div>
     </form>
   )

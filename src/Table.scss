@@ -1,0 +1,25 @@
+.table{
+  width: 70%;
+  .first-col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-col{
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.button-container{
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .edit-btn{
+    padding: 0;
+    .edit-img{
+      width: 40px;
+    }
+  }
+}

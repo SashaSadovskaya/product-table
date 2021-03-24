@@ -4,20 +4,42 @@ import {Table} from "./Table";
 import Form from "./Form";
 import {IGood} from "./data";
 
-export type RemoveCallback = (id: any) => void;
+export type RemoveCallback = (id: number) => void;
 export type AddCallback = (inputName: string, inputQuantity: number, inputPrice: number) => void;
+export type UpdateCallback = (id: number, inputName: string, inputQuantity: number, inputPrice: number) => void;
 
 function App() {
   const now = new Date();
 
-  const [key, setKey] = useState(1);
   const [goods, setGoods] = useState<Array<IGood>>([])
-  console.log(goods)
 
   const removeGood: RemoveCallback = (id: number) => {
-    console.log(id)
-    // @ts-ignore
     setGoods([...goods.filter((good) => good.id !== id)])
+  }
+
+  const updateGood: UpdateCallback = (id, inputName, inputQuantity, inputPrice) => {
+
+    if (id && inputName && inputQuantity && inputPrice) {
+
+      let good: IGood;
+      let key: number;
+      for(let i = 0; i <= goods.length; i++) {
+        if(goods[i].id === id) {
+          good = goods[i];
+          key = i;
+          break;
+        }
+      }
+
+      // @ts-ignore
+      if(good === undefined || key === undefined) return;
+
+      good.name = inputName;
+      good.quantity = inputQuantity;
+      good.price = inputPrice;
+      goods[key] = good;
+      setGoods([...goods]);
+    }
   }
 
 
@@ -39,7 +61,7 @@ function App() {
   return (
     <div className="app-container">
       <Form addGood={addGood}/>
-      <Table removeGood={removeGood} goods={goods} key={key}/>
+      <Table updateGood={updateGood} removeGood={removeGood} goods={goods}/>
     </div>
   );
 }
