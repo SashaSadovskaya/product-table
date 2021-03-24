@@ -42,6 +42,7 @@ const Form = ({addGood}: FormProps) => {
 
         />
         <input
+          min='1'
           name = 'quantity'
           type="number"
           className="form-control"
@@ -51,6 +52,7 @@ const Form = ({addGood}: FormProps) => {
           onKeyDown={handleKeyPress}
         />
         <input
+          min='0'
           name = 'price'
           type='number'
           className="form-control"
@@ -59,7 +61,7 @@ const Form = ({addGood}: FormProps) => {
           value={inputValues.price}
           onKeyDown={handleKeyPress}
         />
-        <button className='btn btn-outline-success' type='submit'>Add</button>
+        <button className='btn btn-outline-success ml-1' type='submit'>Add</button>
       </div>
     </form>
   )

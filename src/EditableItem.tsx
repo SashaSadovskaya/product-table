@@ -35,18 +35,10 @@ export const EditableItem = ({good, updateGood, setToEdit}: ItemProps) => {
             onChange={handleChange}
             className="form-control"
           />
-          <div className='button-container'>
-            <button
-              type="button"
-              className="btn  btn-outline-success btn-sm ml-1"
-              onClick={clickHandler}
-            >
-              update
-            </button>
-          </div>
         </td>
         <td className='table-col'>
           <input
+            min='1'
             type='number'
             value={inputValues.quantity}
             name='quantity'
@@ -56,12 +48,24 @@ export const EditableItem = ({good, updateGood, setToEdit}: ItemProps) => {
         </td>
         <td className='table-col'>
           <input
+            min='0.1'
             type='number'
             name='price'
             value={inputValues.price}
             onChange={handleChange}
             className="form-control"
           />
+        </td>
+        <td>
+          <div className='button-container'>
+            <button
+              type="button"
+              className="btn  btn-outline-success btn-sm ml-1"
+              onClick={clickHandler}
+            >
+              update
+            </button>
+          </div>
         </td>
       </>
   )

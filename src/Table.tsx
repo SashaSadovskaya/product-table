@@ -18,6 +18,12 @@ export const Table = ({goods, removeGood, updateGood}: TableProps) => {
   const editGood = (id: number) => {
     setToEdit(id)
   }
+  let sum = 0;
+
+  goods.forEach(good =>{
+    sum += good.price * good.quantity
+    return sum
+  } )
 
   return (
     <table className="table table-hover table-bordered">
@@ -26,6 +32,7 @@ export const Table = ({goods, removeGood, updateGood}: TableProps) => {
         <th>Name</th>
         <th>Quantity</th>
         <th>Price</th>
+        <th>Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -39,7 +46,10 @@ export const Table = ({goods, removeGood, updateGood}: TableProps) => {
       ))}
       <tr>
         <td>
-          Total cost:
+          {`Total cost: `}
+        </td>
+        <td className='table-col' colSpan={3}>
+          {`${sum} $`}
         </td>
       </tr>
       </tbody>

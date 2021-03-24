@@ -1,7 +1,9 @@
 import React from "react";
-import edit from "./edit.png";
+import editIcon from "./assets/edit.png";
+import deleteIcon from "./assets/delete1.png"
 import {IGood} from "./data";
 import {RemoveCallback} from "./App";
+import './Item.scss'
 
 interface ItemProps {
   good: IGood;
@@ -16,17 +18,21 @@ export const Item = ({good, removeGood, editGood}: ItemProps) => {
     <>
       <td className='first-col'>
         {good.name}
+      </td>
+      <td className='table-col'>{good.quantity}</td>
+      <td className='table-col'>{`${good.price} $`}</td>
+      <td>
         <div className='button-container'>
           <button onClick={() => {editGood(good.id)}} type="button" className="btn edit-btn">
-            <img className='edit-img' alt='edit' src={edit}/>
+            <img className='icon-edit' alt='edit' src={editIcon}/>
           </button>
           <button onClick={() => {
             removeGood(good.id)
-          }} type="button" className="btn btn-outline-danger btn-sm">&times;</button>
+          }} type="button" className="btn">
+            <img className='icon-delete' alt='delete' src={deleteIcon}/>
+          </button>
         </div>
       </td>
-      <td className='table-col'>{good.quantity}</td>
-      <td className='table-col'>{good.price}</td>
     </>
   )
 }

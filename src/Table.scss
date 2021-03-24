@@ -1,9 +1,7 @@
 .table{
   width: 70%;
   .first-col{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    vertical-align: middle;
   }
   .table-col{
     text-align: center;
@@ -12,14 +10,7 @@
 }
 
 .button-container{
-  width: 25%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  .edit-btn{
-    padding: 0;
-    .edit-img{
-      width: 40px;
-    }
-  }
 }
