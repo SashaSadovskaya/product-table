@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './App.scss';
-import {Table} from "./Table";
-import Form from "./Form";
-import {IGood} from "./data";
 
-export type RemoveCallback = (id: number) => void;
-export type AddCallback = (inputName: string, inputQuantity: number, inputPrice: number) => void;
-export type UpdateCallback = (id: number, inputName: string, inputQuantity: number, inputPrice: number) => void;
+import Form from "./components/Form/Form";
+import {IGood} from "./data";
+import { Table } from './components/Table/Table';
+import {AddCallback, RemoveCallback, UpdateCallback} from "./types";
+
+
 
 function App() {
   const now = new Date();
